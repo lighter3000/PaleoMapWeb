@@ -34,8 +34,12 @@
             </div>
             
             <div class="geo-div">
-                <input class="lng" id="lng" placeholder="Longitude" class="search" onkeydown="search(this)">
                 <input class="lat" id="lat" placeholder="Latitude" class="search" onkeydown="search(this)">
+                <input class="lng" id="lng" placeholder="Longitude" class="search" onkeydown="search(this)">
+            </div>
+            <div class="range-div">
+                <input id="range-input" type="range" min="0" max="10">
+                <p>Range: <output id="range-output"></output>km</p>
             </div>
             <div>
                 <button class="search-btn" onclick="searchPos()">Search</button>

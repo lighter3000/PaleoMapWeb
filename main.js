@@ -7,8 +7,10 @@
 // Declare variables
 
 const input = document.getElementById("search-bar");
-var map = L.map('map').setView([51.505, -0.09], 1);
+var map = L.map('map').setView([50.829935, 10.337573], 11);
 var info = document.getElementById("info");
+
+var radius = 10;
 
 var markers = [];
 
@@ -55,17 +57,35 @@ var popup = L.popup()
     .openOn(map);
 
 
-var popup = L.popup();
 
+
+var popup = L.popup();
 function onMapClick(e) {
     popup
         .setLatLng(e.latlng)
         .setContent("You clicked the map at " + e.latlng.toString())
         .openOn(map);
 }
+
+map.on('click', onMapClick);  
+
+
+
 */
 
-//map.on('click', onMapClick);  
+
+function rangeKmSlider(){
+    const value = document.querySelector("#range-output");
+    const input = document.querySelector("#range-input");
+
+    value.textContent = input.value;
+    input.addEventListener("input", (event) => {
+        radius = parseInt(event.target.value);
+        value.textContent = radius;
+        
+    });
+}
+
 
 
 input.addEventListener('keydown', function(e) {
@@ -83,11 +103,9 @@ function searchPos(){
     });
     var lng = parseFloat(document.getElementById("lng").value);
     var lat = parseFloat(document.getElementById("lat").value);
-    //alert(long + " " + lat);
-    map.setView([lat, lng], 13);
-    //var marker1 = L.marker([lat, lng]).addTo(map);
+    map.setView([lat, lng], 13-(radius*0.35));
 
-    var {latMin, lngMin, latMax, lngMax} = calcRadius(lat, lng, 4);
+    var {latMin, lngMin, latMax, lngMax} = calcRadius(lat, lng, radius);
 
     var polygon1 = L.polygon([
         [latMin, lngMin],
@@ -98,7 +116,7 @@ function searchPos(){
         }
      ).addTo(map);
 
-     requestGeoData(lat, lng, 4);
+     requestGeoData(lat, lng, radius);
 
 }
 
@@ -173,3 +191,6 @@ function requestGeoData(latDeg, lngDeg, radius) {
 
 }
 
+
+
+rangeKmSlider();
