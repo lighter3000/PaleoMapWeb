@@ -8,6 +8,10 @@ body {
     place-items: center;
 }
 
+p {
+    font-family: Roboto;
+}
+
 #root-div{
     width: 500px;
     border: black;
@@ -19,25 +23,45 @@ body {
     box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.15);
 }
 
+.p1-enter-loc-div {
+    margin-top: 20px;
 
-
-#search {
-    place-items: top;
 }
 
-#search-bar {
+
+
+.search {
+    place-items: top;
     height: 30px;
     width: 375px;
     border-radius: 25px;
-    margin-top: 50px;
     margin-bottom: 20px;
     padding-left: 15px;
     padding-right: 15px;
 }
 
-#geo-div {
+
+.geo-div {
 
 }
+
+.lng, 
+.lat {
+    height: 30px;
+    width: 150px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+
+}
+
+.lng {
+    margin-right: 15px;
+}
+
+
 
 #geo-input {
     height: 30px;
@@ -47,13 +71,36 @@ body {
     padding-right: 15px;
 }
 
+.search-btn {
+
+    margin-bottom: 15px;
+    background-color: white;
+    
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 15px;
+}
+
 .map-div {
     place-items: center;
     
 }
 
+.map {
+    height: 400px; 
+    width: 400px; 
+    margin-left: 50px; 
+    margin-bottom: 50px; 
+    border: black; 
+    border-style: solid; 
+    border-width: 2px;
+}
 
-#info-div {
+
+.info-div {
     place-items: bottom;
     margin-bottom: 50px;
 

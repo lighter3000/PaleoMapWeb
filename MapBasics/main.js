@@ -81,7 +81,7 @@ function searchPos(){
             map.removeLayer(layer);
         }
     });
-    var lng = parseFloat(document.getElementById("long").value);
+    var lng = parseFloat(document.getElementById("lng").value);
     var lat = parseFloat(document.getElementById("lat").value);
     //alert(long + " " + lat);
     map.setView([lat, lng], 13);
