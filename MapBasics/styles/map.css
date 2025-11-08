@@ -1,0 +1,60 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: grid;
+    place-items: center;
+}
+
+#root-div{
+    width: 500px;
+    border: black;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 25px;
+    text-align: center;
+    display: grid;
+    box-shadow: 1px 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+
+
+#search {
+    place-items: top;
+}
+
+#search-bar {
+    height: 30px;
+    width: 375px;
+    border-radius: 25px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#geo-div {
+
+}
+
+#geo-input {
+    height: 30px;
+    border-radius: 25px;
+    margin-bottom: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.map-div {
+    place-items: center;
+    
+}
+
+
+#info-div {
+    place-items: bottom;
+    margin-bottom: 50px;
+
+}

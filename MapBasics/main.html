@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>MapBasics</title>
+        <link rel="stylesheet" href="styles/map.css">
+        
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""/>
+
+        
+        
+
+        
+    </head>
+    <body>
+        
+
+        <div id="root-div">
+            <div id="logo-div">
+                <p id="logo-theme">PaleoSearch</p>
+            </div>
+
+
+            <div id="search-div">
+                <input id="search-bar" placeholder="Search location" class="search" onkeydown="search(this)">
+            </div>
+            <div id="">
+                <p id="">Or enter</p>
+            </div>
+            
+            <div id="geo-div">
+                <input id="long" placeholder="Longitude" class="search" onkeydown="search(this)">
+                <input id="lat" placeholder="Latitude" class="search" onkeydown="search(this)">
+            </div>
+            <div>
+                <button onclick="searchPos()">Search</button>
+            </div>
+            <div id="map-div">
+                <div id="map" style="height: 400px; width: 400px; margin-left: 50px; margin-bottom: 50px; border: black; border-style: solid; border-width: 2px;"></div>
+            </div>
+            
+            <div id="info-div">
+                <textarea name="Info" id="info" cols="50" rows="8"></textarea>
+            </div>
+        </div>
+
+         <!-- Leaflet JS -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+        
+        
+        <!-- Your JS -->
+        <script src="main.js"></script>
+        <footer style="text-align:center; padding:10px; font-size:0.9em; background-color:#f2f2f2; margin-top:20px;">
+            <p>
+                Map &copy; <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors |
+                Tiles by <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> |
+                Powered by <a href="https://leafletjs.com/" target="_blank">Leaflet.js</a> |
+                API and Data by <a href="https://paleobiodb.org" target="_blank">PaleoBioDB</a> (CC BY 4.0)
+            </p>
+        </footer>
+    </body>
+</html>
