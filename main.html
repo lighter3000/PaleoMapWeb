@@ -16,21 +16,21 @@
         
     </head>
     <body>
-        
+        <button class="day-night-btn" id="day-night-btn" onclick="negateLight()"><output id="day-night-output"></output></button>
 
-        <div id="root-div">
+        <div class="root-div">
             <div id="logo-div">
                 <p id="logo-theme">PaleoSearch</p>
             </div>
 
             <div class="p1-enter-loc-div">
-                <p>Enter location</p>
+                <p id="p1-enter">Enter location</p>
             </div>
             <div id="search-div">
                 <input id="search-bar" placeholder="Search location" class="search" onkeydown="search(this)">
             </div>
             <div class="p2-or-enter-div">
-                <p>Or enter</p>
+                <p id="p2-or">Or enter</p>
             </div>
             
             <div class="geo-div">
@@ -39,7 +39,7 @@
             </div>
             <div class="range-div">
                 <input id="range-input" type="range" min="0" max="10">
-                <p>Range: <output id="range-output"></output>km</p>
+                <p id="p3-range">Range: <output id="range-output"></output>km</p>
             </div>
             <div>
                 <button class="search-btn" onclick="searchPos()">Search</button>
@@ -61,7 +61,7 @@
         
         <!-- Logic JS -->
         <script src="main.js"></script>
-        <footer style="text-align:center; padding:10px; font-size:0.9em; background-color:#f2f2f2; margin-top:20px;">
+        <footer id="footer" style="text-align:center; padding:10px; font-size:0.9em; margin-top:20px;">
             <p>
                 Map &copy; <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> contributors |
                 Tiles by <a href="https://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> |

@@ -14,13 +14,15 @@ var radius = 10;
 
 var markers = [];
 
+var isNightMode = false;
+
 // Create map
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
 
-
+document.getElementById("day-night-output").textContent = "🌞";
 
 
 
@@ -191,6 +193,30 @@ function requestGeoData(latDeg, lngDeg, radius) {
 
 }
 
+
+function negateLight(){
+    
+    if(isNightMode){
+        setColor("white");
+        //document.getElementById("day-night-output").textContent = "&#127769;";
+        isNightMode = false;
+    } else {
+        setColor("#3e3e42");
+        isNightMode = true;
+    }
+}
+
+function setColor(color) {
+    document.body.style.backgroundColor = color;
+    document.getElementById("day-night-btn").style.backgroundColor = (color == "#3e3e42") ? "white" : "#3e3e42";
+    var btnText = document.getElementById("day-night-output").textContent;
+    document.getElementById("day-night-output").textContent = (btnText == "🌚") ? "🌞" : "🌚";
+    document.getElementById("p1-enter").style.color = (color == "#3e3e42") ? "white" : "black";
+    document.getElementById("p2-or").style.color = (color == "#3e3e42") ? "white" : "black";
+    document.getElementById("p3-range").style.color = (color == "#3e3e42") ? "white" : "black";
+    document.getElementById("footer").style.backgroundColor = (color == "#3e3e42") ? "#3e3e42" : "white";
+
+}
 
 
 rangeKmSlider();
